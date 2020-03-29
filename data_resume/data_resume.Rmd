@@ -1,7 +1,7 @@
 ---
 name: Noah Giebink
 # position: "Graduate Assistant"
-aboutme: Researcher, Science communicator, Aspiring data scientist
+aboutme: Researcher, Science communicator, Data scientist
 address: "University of Arizona"
 phone: +1 920 763 3784
 email: "nwgiebink@gmail.com"
@@ -33,6 +33,7 @@ workshops <- read_csv('../data/workshops.csv')
 
 ```{r}
 skills %>%
+  filter(grepl('data', tag, ignore.case = T)) %>%
   detailed_entries(with = type, what = skill)
 ```
 
@@ -40,7 +41,11 @@ skills %>%
 
 ```{r}
 education %>% 
-  detailed_entries(what = degree, with = school, when = year, where = where, why = paste('GPA:', gpa))
+  detailed_entries(what = degree, 
+                   with = school, 
+                   when = year, 
+                   where = where, 
+                   why = paste('GPA:', gpa))
 ```
 
 # Research
@@ -61,7 +66,8 @@ research %>%
 
 ```{r}
 teaching %>% 
-  filter(tag == 'general') %>%
+  filter(grepl('data',tag)) %>%
+  filter(type == 'general') %>%
   detailed_entries(with = institution, what = role, where = where, when = date, why = details)
 ```
 
@@ -69,7 +75,8 @@ teaching %>%
 
 ```{r}
 teaching %>%
-  filter(tag == 'GA') %>%
+  filter(grepl('data',tag)) %>%
+  filter(type == 'GA') %>%
   detailed_entries(what = role, when = date, why = details)
 ```
 
@@ -89,17 +96,19 @@ workshops %>%
   detailed_entries(with = venue, what = name, why = details, when = date)
 ```
 
-# Coursework
+# Relevant Coursework
 
 ## Programming
 ```{r}
 coursework %>%
+  filter(grepl('data', tag)) %>%
   filter(type == 'Programming') %>%
   brief_entries(what = paste(course, paste0('(',grade,')')))
 ```
 ## Math and Statistics
 ```{r}
 coursework %>%
+  filter(grepl('data', tag)) %>%
   filter(type == 'Math and Statistics') %>%
   brief_entries(what = paste(course, paste0('(',grade,')')))
 ```
