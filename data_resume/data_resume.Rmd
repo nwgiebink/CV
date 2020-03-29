@@ -1,7 +1,7 @@
 ---
 name: Noah Giebink
 # position: "Graduate Assistant"
-aboutme: Researcher, Science communicator, Data scientist
+aboutme: Researcher, Science communicator, Aspiring data scientist
 address: "University of Arizona"
 phone: +1 920 763 3784
 email: "nwgiebink@gmail.com"
