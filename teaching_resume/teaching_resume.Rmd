@@ -1,0 +1,103 @@
+---
+name: Noah Giebink
+# position: "Graduate Assistant"
+aboutme: Lifelong learner, Communicator, Data scientist
+address: "University of Arizona"
+phone: +1 920 763 3784
+email: "nwgiebink@gmail.com"
+github: nwgiebink
+linkedin: nwgiebink
+headcolor: 414141
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+# packages
+library(vitae)
+library(tibble)
+library(tidyverse)
+# data
+education <- read_csv(file = '../data/education.csv')
+teaching <- read_csv('../data/teaching.csv')
+awards <- read_csv('../data/awards.csv')
+coursework <- read_csv('../data/coursework.csv')
+research <- read_csv('../data/research.csv')
+skills <- read_csv('../data/skills.csv')
+workshops <- read_csv('../data/workshops.csv')
+```
+
+# Skills
+
+```{r}
+skills %>% 
+  mutate(order = ifelse(skills$type == 
+                            'Education', 1,
+                                   ifelse(skills$type == 
+                                             'Professional', 2,
+                                           ifelse(skills$type == 
+                                                     'Data Science', 3,
+                                                   ifelse(skills$type == 
+                                                              'Soft Skills', 4, 5))))) %>%
+  filter(grepl('teaching', tag, ignore.case = T)) %>%
+  arrange(order) %>%
+  detailed_entries(with = type, what = skill)
+```
+
+# Education
+
+```{r}
+education %>% 
+  detailed_entries(what = degree, 
+                   with = school, 
+                   when = year, 
+                   where = where, 
+                   why = paste('GPA:', gpa))
+```
+
+# Teaching
+
+```{r}
+teaching %>% 
+  filter(grepl('teaching',tag)) %>%
+  filter(type == 'general') %>%
+  detailed_entries(with = institution, what = role, where = where, when = date, why = details)
+workshops %>%
+  filter(tag == 'contributed') %>%
+  detailed_entries(with = venue, what = name, where = where, why = details, when = date)
+```
+## Graduate Instructor
+```{r}
+teaching %>%
+  filter(grepl('teaching',tag)) %>%
+  filter(type == 'GA') %>%
+  detailed_entries(what = role, when = date, why = details)
+```
+
+# Relevant Coursework
+```{r}
+coursework %>%
+  filter(grepl('teaching', tag)) %>%
+  brief_entries(what = paste(course))
+```
+
+# Research
+## University of Arizona
+```{r}
+research %>% 
+  filter(institution == 'University of Arizona') %>%
+  detailed_entries(with = project, what = keywords, when = date)
+```
+## University of Wisconsin - La Crosse
+```{r}
+research %>% 
+  filter(institution == 'University of Wisconsin - La Crosse') %>%
+  detailed_entries(with = project, what = keywords, when = date)
+```
+
+# Publications
+Russell, A.L., Kikuchi, D.W., **Giebink, N.W.**, & D.R. Papaj. (2020).  Sensory bias and signal detection tradeoffs maintain intersexual floral mimicry. Philosophical Transactions B special issue. 
+
+De Luca, P. A., **Giebink, N.**, Mason, A. C., Papaj, D., & Buchmann, S. L. (2018). How well do acoustic recordings characterize properties of bee (Anthophila) floral sonication vibrations? Bioacoustics, 1–14. 
