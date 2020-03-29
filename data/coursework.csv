@@ -1,10 +1,15 @@
-institution,degree,course,grade,type
-University of Arizona,MS,Data Mining and Discovery,currently enrolled,Programming
-University of Arizona,MS,Statistical Natural Language Processing,currently enrolled,Programming
-University of Arizona,MS,R Programming,A,Programming
-University of Arizona,MS,Intro to Modeling in Biology,A,Programming
-University of Arizona,MS,Ecological Forecasting,A ,Math and Statistics
-University of Wisconsin - La Crosse,BS,Elementary Statistics,A,Math and Statistics
-University of Wisconsin - La Crosse,BS,Quantitative Methods in Ecology,A,Math and Statistics
-Waupun High School,HSD,AP Calculus,A,Math and Statistics
-University of Wisconsin - La Crosse,BS,Precalculus,A,Math and Statistics
+institution,degree,course,grade,type,tag
+University of Arizona,MS,Data Mining and Discovery,currently enrolled,Programming,"data, teaching"
+University of Arizona,MS,Statistical Natural Language Processing,currently enrolled,Programming,"data, teaching"
+University of Arizona,MS,R Programming,A,Programming,data
+University of Arizona,MS,Intro to Modeling in Biology,A,Programming,data
+University of Arizona,MS,Ecological Forecasting,A ,Math and Statistics,data
+University of Wisconsin - La Crosse,BS,Elementary Statistics,A,Math and Statistics,data
+University of Wisconsin - La Crosse,BS,Quantitative Methods in Ecology,A,Math and Statistics,data
+Waupun High School,HSD,AP Calculus,A,Math and Statistics,data
+University of Wisconsin - La Crosse,BS,Precalculus,A,Math and Statistics,data
+University of Arizona,MS,Science Communication,A,,teaching
+University of Wisconsin - La Crosse,BS,Writing Tutor Practicum,P,,teaching
+University of Wisconsin - La Crosse,BS,Communicating Effectively,A,,teaching
+University of Wisconsin - La Crosse,BS,Learning and Memory,AB,,teaching
+University of Wisconsin - La Crosse,BS,Culture and Mental Health,AB,,teaching
