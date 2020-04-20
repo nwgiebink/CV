@@ -1,8 +1,6 @@
 skill,type,tag
-"R, Python, Bash",Programming,data
-"Machine Learning, statistics, Bayes, data mining, visualization, geospatial analysis, Tidyverse, Pandas, Scikit-learn",Data Science,"data, teaching"
-"Git, GitHub",Version Control,data
-"Linux, Docker, Jupyter Notebooks",Software,data
-"Teaching, tutoring, educational support, active learning",Education,teaching
-"Supervision, mentoring, teamwork",Professional,teaching
-"Interpersonal communication, public speaking, self-directed learning, empathy, metacognition",Soft Skills,teaching
+"R, Python, Bash",Programming,"data, general"
+"Machine Learning, statistics, Bayes, data mining, visualization, geospatial analysis, Tidyverse, Pandas, Scikit-learn",Data Science,"data, teaching, general"
+"Linux, Git, Github, Docker, Jupyter Notebooks, Office, G Suite",Software & Version Control,"data, general"
+"Teaching, tutoring, educational support, active learning",Pedagogy,teaching
+"Technical communication, public speaking, self-directed learning, adaptability, creativity, empathy, supervision, teamwork",Soft Skills,"teaching, general"
