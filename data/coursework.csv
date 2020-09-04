@@ -1,5 +1,6 @@
 institution,degree,course,grade,type,tag
-University of Arizona,MS,Data Mining and Discovery,currently enrolled,Programming,"data, teaching, general"
+University of Arizona,MS,Neural Networks,currently enrolled,Programming,"data, general"
+University of Arizona,MS,Data Mining and Discovery,A,Programming,"data, teaching, general"
 University of Arizona,MS,Statistical Natural Language Processing,currently enrolled,Programming,"data, teaching, general"
 University of Arizona,MS,R Programming,A,Programming,"data, general"
 University of Arizona,MS,Intro to Modeling in Biology,A,Programming,"data, general"
