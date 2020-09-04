@@ -103,14 +103,14 @@ workshops %>%
 coursework %>%
   filter(grepl('general', tag)) %>%
   filter(type != 'Communication') %>%
-  brief_entries(what = paste(course, paste0('(',grade,')')))
+  brief_entries(what = course)
 ```
 ## Communication
 ```{r}
 coursework %>%
   filter(grepl('general', tag)) %>%
   filter(type == 'Communication') %>%
-  brief_entries(what = paste(course, paste0('(',grade,')')))
+  brief_entries(what = course)
 ```
 
 # Awards
