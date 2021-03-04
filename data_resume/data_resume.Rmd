@@ -48,10 +48,31 @@ education %>%
 ```
 
 # Experience
+```{r}
+data_experience <- experience %>% filter(type != 'agriculture') 
+```
+
+## Data Science and Consulting
+```{r}
+data_experience %>%
+  filter(type == 'data') %>%
+  detailed_entries(with = company, what = role, where=where, when = date, why = details)
+
+```
+
+## Research
+```{r}
+data_experience %>%
+  filter(type == 'research') %>%
+  detailed_entries(with = company, what = role, where=where, when = date, why = details)
+
+```
+
+## Teaching
 
 ```{r}
-experience %>%
-  filter(tag != 'agriculture') %>%
+data_experience %>%
+  filter(type == 'teaching') %>%
   detailed_entries(with = company, what = role, where=where, when = date, why = details)
 
 ```
