@@ -1,7 +1,7 @@
 ---
 name: Noah Giebink
 # position: "Graduate Assistant"
-aboutme: Aspiring Data Scientist, Scientific Researcher, Insight Communicator
+aboutme: Data Scientist, Scientific Researcher, Insight Communicator
 address: "University of Arizona"
 email: "nwgiebink@gmail.com"
 github: nwgiebink
@@ -10,6 +10,8 @@ headcolor: 414141
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
   vitae::awesomecv
+header-includes:
+    - \hypersetup{colorlinks=true, urlcolor = violet, linkcolor = violet}
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
@@ -27,6 +29,7 @@ research <- read_csv('../data/research.csv')
 skills <- read_csv('../data/skills.csv')
 workshops <- read_csv('../data/workshops.csv')
 experience <- read_csv('../data/experience.csv')
+references <- read_csv('../data/references.csv')
 ```
 
 # Skills
@@ -107,5 +110,15 @@ Russell, A.L., Kikuchi, D.W., **Giebink, N.W.**, & D.R. Papaj. (2020).  Sensory 
 
 De Luca, P. A., **Giebink, N.**, Mason, A. C., Papaj, D., & Buchmann, S. L. (2018). How well do acoustic recordings characterize properties of bee (Anthophila) floral sonication vibrations? Bioacoustics, 1–14. 
 
+# References
 
+```{r}
+references %>%
+  detailed_entries(what = role,
+                 with = name,
+                 where = email,
+                 when  = phone,
+                 why = relationship)
+
+```
 
